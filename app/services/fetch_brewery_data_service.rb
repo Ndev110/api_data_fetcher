@@ -1,7 +1,7 @@
-require 'httparty'
+require "httparty"
 
 class FetchBreweryDataService
-  BASE_URL = 'https://api.openbrewerydb.org/v1/breweries'
+  BASE_URL = "https://api.openbrewerydb.org/v1/breweries"
 
   def self.fetch_breweries
     response = HTTParty.get(BASE_URL)
