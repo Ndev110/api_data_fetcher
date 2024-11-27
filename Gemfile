@@ -57,3 +57,4 @@ group :development do
 end
 
 gem "httparty", "~> 0.21.0"
+gem "kaminari"

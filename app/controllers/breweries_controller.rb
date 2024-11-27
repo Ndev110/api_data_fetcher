@@ -5,7 +5,7 @@ class BreweriesController < ApplicationController
       @error_message = result[:error]
       @breweries = []
     else
-      @breweries = result
+      @breweries = Kaminari.paginate_array(result).page(params[:page]).per(10)
     end
   end
 end
