@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Data Fetcher" %></title>
+    <title><%= content_for(:title) || "Breweries" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'breweries', media: 'all' %>
 
     <%= yield :head %>
 
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="icon" href="data:image/png;base64,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" type="image/png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
