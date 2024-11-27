@@ -56,5 +56,5 @@ group :development do
   gem "web-console"
 end
 
-gem "httparty", "~> 0.21.0"
+gem "httparty", "~> 0.22.0"
 gem "kaminari"
