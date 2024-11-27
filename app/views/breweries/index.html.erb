@@ -1,27 +1,25 @@
 <h1>Brewery List</h1>
 
 <% if @error_message %>
-  <p class="error">Error fetching breweries: <%= @error_message %></p>
+  <p class="error">Error: <%= @error_message %></p>
 <% else %>
-  <% @breweries.each do |brewery| %>
-    <div>
-      <h2><%= brewery['name'] %></h2>
-      <p>
-        <strong>Type:</strong> <%= brewery['brewery_type'] || 'Unknown' %>
-      </p>
-      <p>
-        <strong>Location:</strong> <%= brewery['city'] %>, <%= brewery['state'] %>
-      </p>
-      <p>
-        <strong>Website:</strong> 
-        <% if brewery['website_url'] %>
+  <div class="brewery-list">
+    <% @breweries.each do |brewery| %>
+      <div class="brewery-card">
+        <h2><%= brewery['name'] %></h2>
+        <p><strong>Type:</strong> <%= brewery['brewery_type'] %></p>
+        <p><strong>City:</strong> <%= brewery['city'] %></p>
+        <p><strong>State:</strong> <%= brewery['state'] %></p>
+        <p><strong>Website:</strong> 
+          <% if brewery['website_url'] %>
             <a href="<%= brewery['website_url'] %>" target="_blank"><%= brewery['website_url'] %></a>
-        <% else %>
-          None
-        <% end %>
-      </p>
-    </div>
-  <% end %>
+          <% else %>
+            None
+          <% end %>
+        </p>
+      </div>
+    <% end %>
+  </div>
 
   <%= paginate @breweries %>
 <% end %>

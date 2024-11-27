@@ -1,7 +1,7 @@
 require "httparty"
 
 class FetchBreweryDataService
-  BASE_URL = "https://api.openbrewerydb.org/breweries".freeze
+  BASE_URL = "https://api.openbrewerydb.org/v1/breweries".freeze
   CACHE_KEY = "breweries_data".freeze
   CACHE_EXPIRATION = 1.hour
 
