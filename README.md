@@ -1,24 +1,41 @@
-# README
+# API Data Fetcher
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Rails app that fetches and displays data from the Brewery API.
 
-Things you may want to cover:
+- Fetches data from a public API using a service layer.
+- Handles API errors.
+- Provides an endpoint to retrieve brewery data as JSON.
 
-* Ruby version
+## Setup Instructions
+1. Clone the repository
 
-* System dependencies
+2. Install dependencies:
 
-* Configuration
+```bash
+bundle install
+```
 
-* Database creation
+3. Run the server:
 
-* Database initialization
+```bash
+rails server
+```
 
-* How to run the test suite
+4. Access the endpoint:
 
-* Services (job queues, cache servers, search engines, etc.)
+Navigate to [http://localhost:3000/breweries] to check the breweries data.
 
-* Deployment instructions
+## API
+I selected this API because it provided a list of data that could be displayed in various formats. Additionally, it allowed me to implement features like pagination to enhance the user experience.
 
-* ...
+## Limitations/Trade offs
+- The fetched data is not persisted in the database.
+- No filtering or sorting functionality is implemented.
+- For the frontend, I did not use any framework.
+- Due to time constraint, I did not add test cases.
+
+## Enhancements
+- The frontend can be more enhanced.
+- Add filters and provide sorting options for a more interactive user experience.
+- A separate page for each brewery can be created to list all the details.
+- Write test cases using vcr.
